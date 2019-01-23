@@ -21,11 +21,11 @@
 
 
 <body>
-
+    <!-- Within the header an "img" element dwas used to display an image above the body. -->
     <header><img src="mc_logo.png" alt=""></header>
-
+    <!-- The form element was used to to create the area inwhich the user shall play information. -->
     <form id="cForm" action="http://www.mill_computers.com/orders/process.cgi." method="POST">
-
+        <!-- The fieldset with the id of "billing" was used to group the input and label elements that make up the users blling information. Most have an attribute of "required", this allows the server to tell the user when they dont have the necessary information in one of the input boxes. The placeholder attribute was used for the state input, this gives the user a hint on how to organized the information they are giving the server. A maxlength attribute was also used in the state input box, this limited the amount of characters the user can type. The ZIP and Phone number input boxes were both given pattern attributes, the values given to each specified a pattern for the user to follow. -->
         <fieldset id="billing">
             <legend>Billing information (required)</legend>
             <div>
@@ -53,8 +53,113 @@
                 <input type="text" name="state" id="stateBox" placeholder="(nn)" maxlength="2" />
             </div>
 
+            <div>
+                <label for="zipBox">ZIP/Postal Code</label>
+                <input type="text" name="zip" id="zipBox" pattern="^\d{5}(-\d{4})?$ " />
+            </div>
+
+            <div>
+                <label for="phoneBox">Phone</label>
+                <input type="tel" name="phone" id="phoneBox" pattern="^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$"
+                    required />
+            </div>
+
         </fieldset>
 
+        <!-- Within the fieldset with the ID of "build" inlvolves labels and inputs that are associated with datalists. These datalists are give value that the user can choose and the characters are automatically written. This is to give the user all the options and to speed up the process. The last two divs have multiple labels and inputs with the attribute of "type"="radio". This simulates the feeling of a button, an the user can choose "Yes" or "No". -->
+
+        <fieldset id="build">
+
+            <legend>Build a Computer Workshop</legend>
+
+            <div>
+                <label for="ps">Processer Speed</label>
+                <input type="text" name="processer" id="ps" list="speed" required />
+                <datalist id="speed">
+                    <option value="3.2 GHz"></option>
+                    <option value="4.0 GHz"></option>
+                    <option value="5.2GHz"></option>
+                </datalist>
+            </div>
+
+            <div>
+                <label for="memory">Memory</label>
+                <input type="text" name="size" id="memory" list="membox" required />
+                <datalist id="membox">
+                    <option value="1 GB"></option>
+                    <option value="2 GB"></option>
+                    <option value="4 GB"></option>
+                    <option value="8 GB"></option>
+                </datalist>
+            </div>
+
+            <div>
+                <label for="monitor">Monitor Size</label>
+                <input type="text" name="screen" id="monitor" list="screenBox" required />
+                <datalist id="screenBox">
+                    <option value="15 in "></option>
+                    <option value="17 in"></option>
+                    <option value="19 in"></option>
+                    <option value="21 in"></option>
+                </datalist>
+            </div>
+
+            <div>
+                <label for="drive">Hard Drive</label>
+                <input type="text" name="size2" id="drive" list="driveBox" required />
+                <datalist id="driveBox">
+                    <option value="240 GB "></option>
+                    <option value="500 GB"></option>
+                    <option value="750 GB"></option>
+                    <option value="1 TB"></option>
+                </datalist>
+            </div>
+
+            <div>
+                <label for="dvd">
+                    DVD Burner
+                    <fieldset>
+                        <label for="dyes">Yes</label>
+                        <input type="radio" name="dvd" id="dyes" value="Yes">
+
+                        <label for="dno">No</label>
+                        <input type="radio" name="dvd" id="dno" value="No">
+                    </fieldset>
+                </label>
+            </div>
+
+            <div>
+                <label for="dvd">
+                    Turner Card
+                    <fieldset>
+                        <label for="tyes">Yes</label>
+                        <input type="radio" name="turner" id="tyes" value="Yes">
+
+                        <label for="tno">No</label>
+                        <input type="radio" name="turner" id="tno" value="No">
+                    </fieldset>
+                </label>
+            </div>
+
+            <div>
+                <label for="dvd">
+                    Media Card Reader
+                    <fieldset>
+                        <label for="ryes">Yes</label>
+                        <input type="radio" name="media" id="ryes" value="Yes">
+
+                        <label for="rno">No</label>
+                        <input type="radio" name="media" id="rno" value="No">
+                    </fieldset>
+                </label>
+            </div>
+
+        </fieldset>
+
+        <!-- The "button" element with a "type" attribute and a value of "submit" create a box that the user can use to send the information they typed onto the form. -->
+        <button type="submit">
+            SUBMIT
+        </button>
 
 
     </form>
