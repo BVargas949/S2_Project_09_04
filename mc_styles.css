@@ -14,10 +14,10 @@ html {
     background: url(1234567.jpg);
     background-size: cover;
     color: whitesmoke;
-    overflow: scroll;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+/* The body was given specifications seperate from the html. If the users viewport is too small to render all the information, a scroll bar will appear. The width is 80% of the html's space, an the height fills all of the html. The background color was set to blacck and margin auto was used to center the body within the html. There was color added with blur added to the border to make it look like a hsadoe. */
 body {
     overflow: scroll;
     width: 80%;
@@ -27,6 +27,8 @@ body {
     margin-right: auto;
     box-shadow: 10px 10px 10px rgb(31, 31, 31), -10px 10px 10px rgb(31, 31, 31);
 }
+
+/* All images would be given a display of block and centered using the margin space. More space was added to the top(5px) using margin specifications. Grey borders were given that are 2 pixel units wide and padding was given to each element. (20 pixels units.) */
 
 img {
     display: block;
