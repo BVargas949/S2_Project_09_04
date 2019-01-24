@@ -1,19 +1,38 @@
 @charset "utf-8";
 
+
+
+
+/* The heights and widths of the html were set to 100% in order to cover the entire page. An image was used to replace the background, using the cover value the image filled the entire html element. The text color was set to whitesmoke. The body was given a height that cover the entire hmtl, the width was reduced to 50% of the html element. The background color of the body was set to black and the space was added to bothe the left and right margins in order to center the element. */
+
+
 /* Body Styles */
 
 html {
     width: 100%;
     height: 100%;
-    background: radial-gradient(whitesmoke, grey, black);
+    background: url(1234567.jpg);
+    background-size: cover;
     color: whitesmoke;
-
+    overflow: scroll;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 body {
-    width: 50%;
+    overflow: scroll;
+    width: 80%;
     height: 100%;
-    background-color: rgba(26, 26, 26, 0.753);
+    background-color: rgb(0, 0, 0);
     margin-left: auto;
     margin-right: auto;
+    box-shadow: 10px 10px 10px rgb(31, 31, 31), -10px 10px 10px rgb(31, 31, 31);
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    padding: 20px 20px;
+    border: 2px solid rgb(58, 57, 57);
 }

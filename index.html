@@ -28,37 +28,37 @@
         <!-- The fieldset with the id of "billing" was used to group the input and label elements that make up the users blling information. Most have an attribute of "required", this allows the server to tell the user when they dont have the necessary information in one of the input boxes. The placeholder attribute was used for the state input, this gives the user a hint on how to organized the information they are giving the server. A maxlength attribute was also used in the state input box, this limited the amount of characters the user can type. The ZIP and Phone number input boxes were both given pattern attributes, the values given to each specified a pattern for the user to follow. -->
         <fieldset id="billing">
             <legend>Billing information (required)</legend>
-            <div>
+            <div class="vid">
                 <label for="firstBox">First Name</label>
                 <input type="text" name="fName" id="firstBox" required />
             </div>
 
-            <div>
+            <div class="vid">
                 <label for="lastBox">Last Name</label>
                 <input type="text" name="lName" id="lastBox" required />
             </div>
 
-            <div>
+            <div class="vid">
                 <label for="streetBox">Street Address</label>
                 <input type="text" name="street" id="streetBox" required />
             </div>
 
-            <div>
+            <div class="vid">
                 <label for="cityBox">City</label>
                 <input type="text" name="city" id="cityBox" required />
             </div>
 
-            <div>
+            <div class="vid">
                 <label for="stateBox">State (initials)</label>
                 <input type="text" name="state" id="stateBox" placeholder="(nn)" maxlength="2" />
             </div>
 
-            <div>
+            <div class="vid">
                 <label for="zipBox">ZIP/Postal Code</label>
                 <input type="text" name="zip" id="zipBox" pattern="^\d{5}(-\d{4})?$ " />
             </div>
 
-            <div>
+            <div class="vid">
                 <label for="phoneBox">Phone</label>
                 <input type="tel" name="phone" id="phoneBox" pattern="^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$"
                     required />
@@ -72,50 +72,54 @@
 
             <legend>Build a Computer Workshop</legend>
 
-            <div>
-                <label for="ps">Processer Speed</label>
-                <input type="text" name="processer" id="ps" list="speed" required />
-                <datalist id="speed">
-                    <option value="3.2 GHz"></option>
-                    <option value="4.0 GHz"></option>
-                    <option value="5.2GHz"></option>
-                </datalist>
+            <div class="vid">
+                <label for="pSpeed">Processer Speed</label>
+                <select name="sp" id="pSpeed">
+                    <option value="">-- Processer Speed --</option>
+                    <option value="">3.2 GHz</option>
+                    <option value="">4.0 GHz</option>
+                    <option value="">5.2GHz</option>
+                </select>
+
             </div>
 
-            <div>
-                <label for="memory">Memory</label>
-                <input type="text" name="size" id="memory" list="membox" required />
-                <datalist id="membox">
-                    <option value="1 GB"></option>
-                    <option value="2 GB"></option>
-                    <option value="4 GB"></option>
-                    <option value="8 GB"></option>
-                </datalist>
+            <div class="vid">
+                <label for="mem">Memory</label>
+                <select name="memo" id="mem">
+                    <option value="">-- Memory --</option>
+                    <option value="">1 GB</option>
+                    <option value="">2 GB</option>
+                    <option value="">4 GB</option>
+                    <option value="">8 GB</option>
+                </select>
+
             </div>
 
-            <div>
+            <div class="vid">
                 <label for="monitor">Monitor Size</label>
-                <input type="text" name="screen" id="monitor" list="screenBox" required />
-                <datalist id="screenBox">
-                    <option value="15 in "></option>
-                    <option value="17 in"></option>
-                    <option value="19 in"></option>
-                    <option value="21 in"></option>
-                </datalist>
+
+                <select name="" id="monitor">
+                    <option value="">-- monitor size --</option>
+                    <option value="">15 in</option>
+                    <option value="">17 in</option>
+                    <option value="">19 in</option>
+                    <option value="">21 in</option>
+                </select>
             </div>
 
-            <div>
-                <label for="drive">Hard Drive</label>
-                <input type="text" name="size2" id="drive" list="driveBox" required />
-                <datalist id="driveBox">
-                    <option value="240 GB "></option>
-                    <option value="500 GB"></option>
-                    <option value="750 GB"></option>
-                    <option value="1 TB"></option>
-                </datalist>
+            <div class="vid">
+                <label for="hd">Hard Drive</label>
+                <select name="cs" id="hd">
+                    <option value="">-- Hard Drive --</option>
+                    <option value="">240 GB </option>
+                    <option value="">500 GB</option>
+                    <option value="">750 GB</option>
+                    <option value="">1 TB</option>
+                </select>
+
             </div>
 
-            <div>
+            <div class="vid">
                 <label for="dvd">
                     DVD Burner
                     <fieldset>
@@ -128,8 +132,8 @@
                 </label>
             </div>
 
-            <div>
-                <label for="dvd">
+            <div class="vid">
+                <label for="tuner">
                     Turner Card
                     <fieldset>
                         <label for="tyes">Yes</label>
@@ -141,8 +145,8 @@
                 </label>
             </div>
 
-            <div>
-                <label for="dvd">
+            <div class="vid">
+                <label for="mcard">
                     Media Card Reader
                     <fieldset>
                         <label for="ryes">Yes</label>
@@ -156,12 +160,34 @@
 
         </fieldset>
 
-        <!-- The "button" element with a "type" attribute and a value of "submit" create a box that the user can use to send the information they typed onto the form. -->
-        <button type="submit">
-            SUBMIT
-        </button>
+        <fieldset>
+            <div>
+                <label for="checkbox" id="wa">24-month extended warranty</label>
+                <input type="checkbox" name="check" id="checkbox">
 
+            </div>
 
+            <div>
+                <label for="comment" id="co">Any Additional information or comments below:</label>
+                <textarea name="commentbox" id="comment" cols="80" rows="10"></textarea>
+            </div>
+            <!-- The "button" element with a "type" attribute and a value of "submit" create a box that the user can use to send the information they typed onto the form. -->
+
+            <section>
+                <button type="submit">
+                    SEND ORDER
+                </button>
+
+                <button type="reset">
+                    CANCEL ORDER
+                </button>
+
+                <button type="#">
+                    CONTACT ME
+                </button>
+
+            </section>
+        </fieldset>
     </form>
 
 

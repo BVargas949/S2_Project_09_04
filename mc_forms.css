@@ -1,0 +1,60 @@
+@charset "utf-8";
+
+
+form {
+    background-color: black;
+    /* background: radial-gradient(whitesmoke, rgb(51, 51, 51), black); */
+}
+
+
+fieldset {
+    background-color: rgb(51, 48, 48);
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+
+
+}
+
+
+label {
+    margin: 10px 10px 10px 10px;
+}
+
+input:not([type='radio']) {
+    display: block;
+    background-color: rgb(216, 216, 216);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+label#wa {
+    display: block;
+    margin-left: 36%;
+    margin-right: 38%;
+}
+
+label#co {
+    margin-right: 20%;
+    margin-left: 20%;
+}
+
+
+legend {
+    background-color: rgb(61, 46, 97);
+    padding: 1%;
+
+}
+
+textarea {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+select {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
